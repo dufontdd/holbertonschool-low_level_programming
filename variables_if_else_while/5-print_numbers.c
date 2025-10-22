@@ -1,17 +1,17 @@
 #include <stdio.h>
 
 /**
- * main - print all single digit number of 10 sarting from 0
+ * main - prints all single digit numbers of base 10 starting from 0,
  * followed by a new line
  *
- * Return: Always 0 (succuess)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
 	int n;
 
 	for (n = 0; n < 10; n++)
-	    putchar(n + '0');
+		putchar(n + '0');
 
 	putchar('\n');
 
