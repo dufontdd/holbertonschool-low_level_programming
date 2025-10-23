@@ -1,5 +1,13 @@
-10. a + b
-mandatory
-Write a function that adds two integers and returns the result.
+#include "main.h"
 
-Prototype: int add(int, int);
+/**
+ * add - Additionne deux entiers et renvoie le résultat
+ * @a: premier entier
+ * @b: second entier
+ *
+ * Return: la somme de a et b
+ */
+int add(int a, int b)
+{
+	return (a + b);
+}
