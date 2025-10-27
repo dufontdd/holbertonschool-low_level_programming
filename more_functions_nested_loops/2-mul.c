@@ -1,19 +1,13 @@
 #include "main.h"
 
 /**
- * print_alphabet_x10 - affiche l'alphabet en minuscules 10 fois
+ * mul - multiplies two integers
+ * @a: first integer
+ * @b: second integer
  *
- * Return: void
+ * Return: result of multiplication
  */
-void print_alphabet_x10(void)
+int mul(int a, int b)
 {
-	int i;
-	char ch;
-
-	for (i = 0; i < 10; i++)
-	{
-		for (ch = 'a'; ch <= 'z'; ch++)
-			_putchar(ch);
-		_putchar('\n');
-	}
+    return (a * b);
 }
