@@ -1,10 +1,10 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - print a fonction shows upscales letter
+ * _isupper - Vérifie si un caractère est une majuscule.
+ * @c: Le caractère à tester.
  *
- * Return: Always 0.
+ * Return: 1 si le caractère est une majuscule, 0 sinon.
  */
 int _isupper(int c)
 {
@@ -12,5 +12,4 @@ int _isupper(int c)
 		return (1);
 	else
 		return (0);
-	return (0);
 }
