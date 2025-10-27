@@ -1,13 +1,19 @@
 #include "main.h"
 
 /**
- * mul - multiplie deux entiers
- * @a: premier entier
- * @b: deuxième entier
+ * print_alphabet_x10 - affiche l'alphabet en minuscules 10 fois
  *
- * Return: le résultat de la multiplication
+ * Return: void
  */
-int mul(int a, int b)
+void print_alphabet_x10(void)
 {
-	return (a * b);
+	int i;
+	char ch;
+
+	for (i = 0; i < 10; i++)
+	{
+		for (ch = 'a'; ch <= 'z'; ch++)
+			_putchar(ch);
+		_putchar('\n');
+	}
 }
