@@ -6,13 +6,11 @@
  *
  * Return: Always 0.
  */
-int _supper(int c)
+int _isupper(int c)
 {
-	char c;
-
-	c = 'A';
-	printf("%c: %d\n", c, _insupper(c));
-	c = 'a';
-	printf("%c: %d\n", c, _insupper(c));
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
 	return (0);
 }
