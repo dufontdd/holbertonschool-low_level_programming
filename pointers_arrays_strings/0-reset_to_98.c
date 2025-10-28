@@ -1,13 +1,15 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * afficher une variable pointeur vers int d'une valeur 98
- * @*p: variable utilisé pour cette tache
+ * reset_to_98 - met la valeur de l'entier pointé à 98
+ * @n: pointeur vers un entier à modifier
  *
- * Return Alwase 0.
+ * Description: Cette fonction prend en paramètre un pointeur vers un entier
+ * et change la valeur de cet entier pour 98.
+ *
+ * Return: rien.
  */
-void reset_to_98(int *p)
+void reset_to_98(int *n)
 {
-	*p = 98;
+	*n = 98;
 }
