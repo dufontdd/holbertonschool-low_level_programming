@@ -1,27 +1,28 @@
 #include "main.h"
 
 /**
- * print_rev - affiche une chaîne de caractères en ordre inverse
- * @s: pointeur vers la chaîne à afficher
- *
- * Description: cette fonction parcourt une chaîne jusqu'à la fin,
- * puis affiche les caractères en sens inverse, suivis d'un saut de ligne.
+ * rev_string - renverse une chaîne de caractères
+ * @s: chaîne à inverser
  *
  * Return: rien
  */
-void print_rev(char *s)
+void rev_string(char *s)
 {
-	int len = 0;
-	int i;
+	int i = 0;
+	int j;
+	char temp;
 
-	while (s[len] != '\0')
+	/* Trouver la longueur de la chaîne */
+	while (s[i] != '\0')
 	{
-		len++;
+		i++;
 	}
 
-	for (i = len - 1; i >= 0; i--)
+	/* Inverser la chaîne */
+	for (j = 0; j < i / 2; j++)
 	{
-		_putchar(s[i]);
+		temp = s[j];
+		s[j] = s[i - j - 1];
+		s[i - j - 1] = temp;
 	}
-	_putchar('\n');
 }
