@@ -1,22 +1,20 @@
 #include "main.h"
 
 /**
- * _memset - utiliser cette fonction dans le bloc de code pour,
- * remplir la mémoire avec un octet constant.
- *
- * @n: nombre d'octets à remplir
+ * _memset - Remplit une zone mémoire avec un octet constant
  * @s: pointeur vers la zone mémoire à remplir
- * @b: octets constant à copier
+ * @b: octet constant à copier
+ * @n: nombre d'octets à remplir
  *
- * Return: vers le pointeur de la zone mémoire s.
+ * Return: un pointeur vers la zone mémoire s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-		unsigned int i;
-		i = 0;
-		for (; i < n; i++)
-		{
-			s[i]= b;
-		}
-		return(s);
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
 }
