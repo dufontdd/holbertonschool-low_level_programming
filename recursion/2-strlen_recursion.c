@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - permet de calculer la longeur d'une chaine
- * @s: connaîtr la longeur de la chaiane
+ * _strlen_recursion - permet de calculer la longeur d'une chaîne
+ * @s: connaîtr la longeur de la chaîne
  *
- *  Return: Always 0.
+ *  Return: longeur de la chaîne
  */
 int _strlen_recursion(char *s)
 {
