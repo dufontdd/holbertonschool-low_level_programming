@@ -3,6 +3,8 @@
 /**
  * _strlen_recursion - permet de calculer la longeur d'une chaine
  * @s: connaîtr la longeur de la chaiane
+ *
+ *  Return: Always 0.
  */
 int _strlen_recursion(char *s)
 {
