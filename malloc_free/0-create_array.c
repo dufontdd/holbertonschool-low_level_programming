@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * create_array - crée un tableau de caractères et l'initialise
- * @size: taille du tableau à allouer
- * @c: caractère d'initialisation
- * Return: pointeur vers le tableau, ou NULL si échec ou size = 0
+ * create_array - creates an array of chars, and initializes it with a specific char
+ * @size: size of the array to allocate
+ * @c: char to initialize the array with
+ * Return: pointer to the array, or NULL if it fails or if size is 0
  */
 char *create_array(unsigned int size, char c)
 {
