@@ -24,9 +24,10 @@ char *str_concat(char *s1, char *s2)
 		;
 	for (size2 = 0; s2[size2] != '\0'; size2++)
 		;
+
 	buffer = malloc(sizeof(char) * (size1 + size2 + 1));
 	if (buffer == NULL)
-		return(NULL);
+		return (NULL);
 
 	for (i = 0; i < size1; i++)
 		buffer[i] = s1[i];
@@ -36,5 +37,5 @@ char *str_concat(char *s1, char *s2)
 
 	buffer[i + j] = '\0';
 
-	return(buffer);
+	return (buffer);
 }
