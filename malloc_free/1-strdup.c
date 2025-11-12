@@ -1,12 +1,11 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strdup - renvoie un pointeur vers une nouvelle chaîne de caractères,
- *  copie de la chaîne `str`. La mémoire est allouée
- *  @str chaîne source
+ * _strdup - crée une copie d'une chaîne de caractères
+ * @str: chaîne à dupliquer
  *
- *  Return: pointeurvers la nouvelle chaîne, ou NULL si erreur
+ * Return: pointeur vers la nouvelle chaîne, ou NULL si erreur
  */
 char *_strdup(char *str)
 {
@@ -14,19 +13,18 @@ char *_strdup(char *str)
 	unsigned int i, size;
 
 	if (str == NULL)
-		return(NULL);
+		return (NULL);
 
 	for (size = 0; str[size] != '\0'; size++)
 		;
 
 	buffer = malloc(sizeof(char) * (size + 1));
 	if (buffer == NULL)
-		return(NULL);
+		return (NULL);
 
 	for (i = 0; i < size; i++)
 		buffer[i] = str[i];
 	buffer[i] = '\0';
 
-
-	return(buffer);
+	return (buffer);
 }
