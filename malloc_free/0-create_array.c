@@ -2,15 +2,16 @@
 #include <stdlib.h>
 
 /**
- * create_array - creates an array of chars, and initializes it with a specific char
+ * create_array - creates an array of chars, and initializes it with a char
  * @size: size of the array to allocate
  * @c: char to initialize the array with
- * Return: pointer to the array, or NULL if it fails or if size is 0
+ *
+ * Return: pointer to the array, or NULL if size = 0 or malloc fails
  */
 char *create_array(unsigned int size, char c)
 {
-	unsigned int i;
 	char *buffer;
+	unsigned int i;
 
 	if (size == 0)
 		return (NULL);
@@ -21,7 +22,6 @@ char *create_array(unsigned int size, char c)
 
 	for (i = 0; i < size; i++)
 		buffer[i] = c;
-
 	buffer[i] = '\0';
 
 	return (buffer);
