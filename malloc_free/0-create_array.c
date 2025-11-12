@@ -1,15 +1,17 @@
 #include "main.h"
 #include <stdlib.h>
 
-/** create_array - créé un tableau de caractère
- * @c: initialisation du tableau
- * @size: taille du tableau à alouer
- * Return: pointeur vers le tableau NULL if dize = 0 ou si cela echoue
+/**
+ * create_array - créé un tableau de caractères
+ * @size: taille du tableau à allouer
+ * @c: caractère d’initialisation
+ *
+ * Return: pointeur vers le tableau, ou NULL si size = 0 ou si l’allocation échoue
  */
 char *create_array(unsigned int size, char c)
 {
-	unsigned int i;
 	char *buffer;
+	unsigned int i;
 
 	if (size == 0)
 		return (NULL);
