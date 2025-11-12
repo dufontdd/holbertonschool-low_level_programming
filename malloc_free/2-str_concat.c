@@ -2,13 +2,12 @@
 #include <stdlib.h>
 
 /**
- * concat - coller deux chaîne de caractèredans dans un espace mémoire,
- * en utilisant malloc.
- * @s1 contenue de la chaîne a coller a s2.
- * @s2 contenue a coler suite a s1.
+ * str_concat - concatène deux chaînes de caractères
+ * dans un nouvel espace mémoire
+ * @s1: première chaîne
+ * @s2: deuxième chaîne
  *
- * Return: buffer ou NULL si ça fonctionne pas,
- * et la chaîne doit être traiter comme vide.
+ * Return: pointeur vers la nouvelle chaîne, ou NULL si échec
  */
 char *str_concat(char *s1, char *s2)
 {
@@ -37,5 +36,5 @@ char *str_concat(char *s1, char *s2)
 
 	buffer[i + j] = '\0';
 
-	return(NULL);
+	return(buffer);
 }
