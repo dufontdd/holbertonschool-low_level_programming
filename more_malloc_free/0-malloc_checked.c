@@ -1,18 +1,18 @@
 #include "main.h"
-#include <stdlib>
+#include <stdlib.h>
 
 /**
- * _checked - alloue de la mémoire à l'aide de malloc
- * @b: taille de la mémoir a alouer (en octets)
+ * malloc_checked - alloue de la mémoire à l'aide de malloc
+ * @b: taille de la mémoire à allouer (en octets)
  *
- * Return: pointeur de la zone memoire allouée
- * le programme quitte avec le code 98 si le code échoue
+ * Return: pointeur vers la mémoire allouée
+ *         le programme quitte avec le code 98 si malloc échoue
  */
 void *malloc_checked(unsigned int b)
 {
 	void *ptr;
 
-	ptr = malloc (b);
+	ptr = malloc(b);
 	if (ptr == NULL)
 		exit(98);
 
