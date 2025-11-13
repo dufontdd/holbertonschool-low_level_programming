@@ -1,44 +1,39 @@
 #include "main.h"
-#include <stdlib>
+#include <stdlib.h>
 
 /**
- * grid - écrire une fonction,
- * qui renvoie un pointeur vers un tableau d'entiers à deux dimensions.
- * @width: nombre de colonnes du tableau.
- * @height: nombre de lignes de ton tableau
+ * alloc_grid - creates a 2D array of integers
+ * @width: number of columns
+ * @height: number of rows
  *
- * Return: pointeurdu du tableau 2D ou NULL en cas déchec.
+ * Return: pointer to the 2D array, or NULL if failure
  */
 int **alloc_grid(int width, int height)
 {
-	int i, j;
-	int *buffer1;
-	int *buffer2;
+	int **grid;
+	int h, w;
 
-	if (width <= 0)
-		return (NULL);
-	if (height <= 0)
+	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	buffer1 = (malloc(int) * width);
-	if (buffer == NULL)
+	grid = malloc(sizeof(int *) * height);
+	if (grid == NULL)
 		return (NULL);
 
-	for (i = 0; i < width; i++)
+	for (h = 0; h < height; h++)
 	{
-		buffer2[i]= (malloc(int) * height);
-		if (buffer2[i] == NULL)
-			return (NULL);
+		grid[h] = malloc(sizeof(int) * width);
+		if (grid[h] == NULL)
 		{
-			for (j = 0; j < i; j++)
-				free(buffer2[i]);
-			free(buffer1);
+			for (w = 0; w < h; w++)
+				free(grid[w]);
+			free(grid);
 			return (NULL);
 		}
 
-		for (j = 0; i < height; j++)
-			grid[i][j] = 0;
+		for (w = 0; w < width; w++)
+			grid[h][w] = 0;
 	}
 
-	return (buffer1);
+	return (grid);
 }
