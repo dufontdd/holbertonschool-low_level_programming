@@ -11,34 +11,34 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int i, j;
-	int *buffer1;
-	int *buffer2;
+        int i, j;
+        int *buffer1;
+        int *buffer2;
 
-	if (width <= 0)
-		return (NULL);
-	if (height <= 0)
-		return (NULL);
+        if (width <= 0)
+                return (NULL);
+        if (height <= 0)
+                return (NULL);
 
-	buffer1 = (malloc(int) * width);
-	if (buffer == NULL)
-		return (NULL);
-		
-	for (i = 0; i < width; i++)
-	{
-		buffer2[i]= (malloc(int) * height);
-		if (buffer2[i] == NULL)
-			return (NULL);
-		{
-			for (j = 0; j < i; j++)
-			free(buffer2[i]);
-			free(buffer1);
-			return (NULL);
-		}
+        buffer1 = (malloc(int) * width);
+        if (buffer == NULL)
+                return (NULL);
 
-	for (j = 0; i < height; j++)
-		grid[i][j] = 0;
-	}
+        for (i = 0; i < width; i++)
+        {
+                buffer2[i]= (malloc(int) * height);
+                if (buffer2[i] == NULL)
+                        return (NULL);
+                {
+                        for (j = 0; j < i; j++)
+                        free(buffer2[i]);
+                        free(buffer1);
+                        return (NULL);
+                }
 
-	return (buffer1);
+        for (j = 0; i < height; j++)
+                grid[i][j] = 0;
+        }
+
+        return (buffer1);
 }
