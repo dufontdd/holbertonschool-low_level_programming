@@ -9,11 +9,11 @@
  *
  * Description: Defines a dog with its name, age and owner.
  */
-typedef struct dog
+struct dog
 {
-    char *name;
-    float age;
-    char *owner;
+	char *name;
+	float age;
+	char *owner;
 };
 
 typedef struct dog dog_t;
@@ -23,4 +23,4 @@ void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
 
-#endif 
+#endif /* DOG_H */
