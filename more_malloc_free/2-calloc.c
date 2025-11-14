@@ -33,5 +33,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < total; i++)
 		buff[i] = NULL;
 
-	return (buff);
+	return ((void *)buff);
 }
