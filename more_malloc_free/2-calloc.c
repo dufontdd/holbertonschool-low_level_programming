@@ -2,36 +2,32 @@
 #include <stdlib.h>
 
 /**
- * _calloc - alloue de la mémoire pour un tableau et l'initialise à zéro
- * @nmemb: nombre d'éléments à allouer
- * @size: taille de chaque élément en octets
+ * _calloc - allocates memory for an array and initializes it to zero
+ * @nmemb: number of elements to allocate
+ * @size: size in bytes of each element
  *
- * Description: Alloue dynamiquement un tableau de nmemb éléments
- * de size octets chacun. Chaque octet est initialisé à zéro.
- * Si nmemb ou size vaut 0, ou si malloc échoue, la fonction
- * retourne NULL.
+ * Description: Allocates memory for an array of nmemb elements of
+ * size bytes each. Each byte of the allocated memory is set to 0.
+ * If nmemb or size is 0, or if malloc fails, the function returns NULL.
  *
- * Return: pointeur vers la mémoire allouée ou NULL si échec
+ * Return: pointer to the allocated memory, or NULL if allocation fails
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i;
-	char *buff;
-	unsigned int total;
+    unsigned int i;
+    unsigned int total;
+    char *buff;
 
-	if (nmemb == 0)
-		return (NULL);
-	if (size == 0)
-		return (NULL);
+    if (nmemb == 0 || size == 0)
+        return (NULL);
 
-	total = nmemb * size;
+    total = nmemb * size;
+    buff = malloc(total);
+    if (buff == NULL)
+        return (NULL);
 
-	buff = malloc(total);
-	if (buff == 0)
-		return (NULL);
+    for (i = 0; i < total; i++)
+        buff[i] = 0;
 
-	for (i = 0; i < total; i++)
-		buff[i] = NULL;
-
-	return ((void *)buff);
+    return ((void *)buff);
 }
