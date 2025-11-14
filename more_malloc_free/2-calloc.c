@@ -16,18 +16,21 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
     unsigned int i;
     unsigned int total;
-    char *buff;
+    char *ptr;
+    void *buff;
 
     if (nmemb == 0 || size == 0)
         return (NULL);
 
     total = nmemb * size;
+
     buff = malloc(total);
     if (buff == NULL)
         return (NULL);
 
+    ptr = (char *)buff;
     for (i = 0; i < total; i++)
-        buff[i] = 0;
+        ptr[i] = 0;
 
-    return ((void *)buff);
+    return (buff);
 }
