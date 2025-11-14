@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stdlib>
 
 /**
  * init_dog - initialise une variable de type structure chien
