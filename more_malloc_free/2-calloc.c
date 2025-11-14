@@ -24,10 +24,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	buff = malloc(total);
 	if (buff == 0)
-		return (NULL)
+		return (NULL);
 
 	for (i = 0; i < total; i++)
 		buff[i] = 0;
 
-	return (buff)
+	return (buff);
 }
