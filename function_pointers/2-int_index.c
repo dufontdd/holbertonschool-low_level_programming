@@ -1,13 +1,12 @@
 #include "function_pointers.h"
 
 /**
- * _index - rwight a fuction wo chersh a entier
- * @size: nomber of elements in the arry
- * @arry: wo i will looking for a entier
- * @cmp: pointeurs of the fonction
+ * int_index - searches for an integer using a comparison function
+ * @array: array to search in
+ * @size: number of elements in the array
+ * @cmp: pointer to the function used to compare values
  *
- * Return: index of the first elements from cmp
- * oe -1 if no elements matches
+ * Return: index of first match, or -1 if no match or size <= 0
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
