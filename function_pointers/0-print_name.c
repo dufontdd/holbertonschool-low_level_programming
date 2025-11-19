@@ -1,11 +1,10 @@
 #include "fonction_pointeurs.h"
+#include <stdio.h>
 
 /**
- * print_name - rappeler la fonction name 
- * @name: chaîne à afficher
- * @f(name): fonction qui prend un char * et affiche quelque chose
- *
- * Return: void
+ * print_name - print a name using a function pointer 
+ * @name: the name to print
+ * @f(name): pointer to a function that takes a char* and returns nothing
  */
 void print_name(char *name, void (*f)(char *))
 {
