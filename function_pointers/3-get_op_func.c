@@ -1,12 +1,12 @@
 #include "3-calc.h"
 
 /**
- * get_op_func - retourne un pointeur vers
- * la fonction correspondant à l'opérateur
- * @s: l'opérateur sous forme de chaîne de caractères
- * Return: pointeur vers la fonction correspondant
- * à l'opérateur, sinon NULL
- */
+* get_op_func - retourne un pointeur vers
+* la fonction correspondant à l'opérateur
+* @s: l'opérateur sous forme de chaîne de caractères
+* Return: pointeur vers la fonction correspondant
+* à l'opérateur, sinon NULL
+*/
 int (*get_op_func(char *s))(int, int)
 {
 	op_t operators[] = {

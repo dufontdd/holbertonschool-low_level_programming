@@ -6,10 +6,10 @@
 #include <stdio.h>
 
 /**
- * struct op - operator and its function
- * @op: operator string ("+", "-", "*", "/", "%")
- * @f: pointer to the function that performs the operation
- */
+* struct op - operator and its function
+* @op: operator string ("+", "-", "*", "/", "%")
+* @f: pointer to the function that performs the operation
+*/
 typedef struct op
 {
 	char *op;
