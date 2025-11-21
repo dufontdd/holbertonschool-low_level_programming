@@ -1,31 +1,29 @@
 #include "3-calc.h"
+#include <stdlib.h>
 
 /**
-* get_op_func - retourne un pointeur vers
-* la fonction correspondant à l'opérateur
-* @s: l'opérateur sous forme de chaîne de caractères
-* Return: pointeur vers la fonction correspondant
-* à l'opérateur, sinon NULL
-*/
+ * get_op_func - selects correct operation
+ * @s: operator
+ *
+ * Return: pointer to needed function, or NULL
+ */
 int (*get_op_func(char *s))(int, int)
 {
-	op_t operators[] = {
-		{"+", op_add },
-		{"-", op_sub },
-		{"*", op_mul },
-		{"/", op_div },
-		{"%", op_mod },
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
 		{NULL, NULL}
 	};
-
 	int i = 0;
 
-	while (operators[i].op != NULL)
-	{
-		if (strcmp(s, operators[i].op) == 0)
-			return (operators[i].f);
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
 		i++;
-	}
 
-	return (NULL);
+	if (ops[i].op == NULL)
+		return (NULL);
+
+	return (ops[i].f);
 }
