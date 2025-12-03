@@ -1,14 +1,13 @@
 #include "lists.h"
 
 /**
- * print_list - imprime tous les éléments d'une liste list_t
- * @h: pointeur vers le premier noeud
- *
- * Return: nombre de noeuds
+ * print_list - function that prints all the elements of a list_t list
+ * @h: Pointer to a linked list head.
+ * Return: The number of total nodes in the linked list.
  */
 size_t print_list(const list_t *h)
 {
-	size_t count = 0;
+	size_t nodes = 0;
 
 	while (h != NULL)
 	{
@@ -16,10 +15,8 @@ size_t print_list(const list_t *h)
 			printf("[0] (nil)\n");
 		else
 			printf("[%u] %s\n", h->len, h->str);
-
-		count++;
+		nodes++;
 		h = h->next;
 	}
-
-	return (count);
+	return (nodes);
 }
