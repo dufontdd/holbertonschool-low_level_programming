@@ -1,24 +1,20 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - retourne le nœud à un index donné
- * @head: pointeur vers le début de la liste
- * @index: index du nœud à retourner
- *
- * Return: le nœud à cet index, ou NULL si inexistant
+ * sum_dlistint - Sums all the data (n) of a doubly linked list.
+ * @head: Pointer to the head of the list.
+ * Return: The sum of all the data, or 0 if the list is empty.
  */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+int sum_dlistint(dlistint_t *head)
 {
-	unsigned int i = 0;
+	int sum = 0;
+	dlistint_t *current = head;
 
-	while (head != NULL)
+	while (current != NULL)
 	{
-		if (i == index)
-			return (head);
-
-		head = head->next;
-		i++;
+		sum += current->n;
+		current = current->next;
 	}
 
-	return (NULL);
+	return (sum);
 }
