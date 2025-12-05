@@ -1,61 +1,61 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - adds or updates an element in a hash table
- * @ht: the hash table
- * @key: the key (cannot be empty)
- * @value: the associated value (duplicate)
+ * hash_table_set - ajoute ou met à jour un élément dans la table
+ * @ht: table de hachage
+ * @key: clé (non vide)
+ * @value: valeur (doit être dupliquée)
  *
- * Return: 1 if is  OK, 0 if error
+ * Return: 1 si succès, 0 sinon
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *node, *current;
-	char *value_copy;
-	
+	hash_node_t *node, *new_node;
+	char *dup_value;
+
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	current = ht->array[index];
-	
-	while (current != NULL)
-	{
-		if (strcmp(current->key, key) == 0)
-	{
-		value_copy = strdup(value);
-		if (value_copy == NULL)
-			return (0);
+	node = ht->array[index];
 
-		free(current->value);
-		current->value = value_copy;
-		return (1);
-	}
-		current = current->next;
-	}
-
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
-		return (0);
-	
-	node->key = strdup(key);
-	if (node->key == NULL)
+	while (node != NULL)
 	{
-		free(node);
-		return (0);
+		if (strcmp(node->key, key) == 0)
+		{
+			dup_value = strdup(value);
+			if (dup_value == NULL)
+				return (0);
+
+			free(node->value);
+			node->value = dup_value;
+			return (1);
+		}
+		node = node->next;
 	}
 
-	node->value = strdup(value);
-	if (node->value == NULL)
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
+
+	new_node->key = strdup(key);
+	if (new_node->key == NULL)
 	{
-		free(node->key);
-		free(node);
+		free(new_node);
 		return (0);
 	}
-	
-	node->next = ht->array[index];
-	ht->array[index] = node;
+
+	new_node->value = strdup(value);
+	if (new_node->value == NULL)
+	{
+		free(new_node->key);
+		free(new_node);
+		return (0);
+	}
+
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
 
 	return (1);
 }
